@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>7R14L 4nD 3rR0r</title>
+    <link>https://h473r560nn4h473.github.io/</link>
+    
+    <atom:link href="https://h473r560nn4h473.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Mon, 16 Dec 2024 02:19:27 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>GitHub Pages: Hexo with Tranquilpeak theme - Deploy</title>
+      <link>https://h473r560nn4h473.github.io/2024/12/14/github-pages-hexo-with-tranquilpeak-theme-deploy/</link>
+      <guid>https://h473r560nn4h473.github.io/2024/12/14/github-pages-hexo-with-tranquilpeak-theme-deploy/</guid>
+      <pubDate>Sat, 14 Dec 2024 06:27:04 GMT</pubDate>
+      
+      <description>&lt;p&gt;블로그를 만듭니다.&lt;br&gt;작업물을 GitHub Pages에 배포합니다.&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<!-- excerpt --><h3 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h3><ol><li><a href="#Introduction">Introduction</a></li><li><a href="#Deploy">Deploy</a></li><li><a href="#Conclusion">Conclusion</a><br><br></br></li></ol><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>지금까지 작업한 것을 인터넷에서도 접근할 수 있게 배포합니다.<br>마무리 단계입니다.<br><br></br></p><h3 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h3><p>이하 과정 중 막히는 부분이 있다면 <a href="https://hexo.io/ko/docs/" title="" target="_blank">Hexo 공식 문서</a>를 따라서 진행하시면 됩니다.</p><p>명령 프롬프트를 열고 Hexo 폴더로 이동해서 <code>npm install hexo-deployer-git --save</code><sup id="hexo_01"><a href="#footnote1">[1]</a></sup> 명령을 실행합니다. Hexo의 배포용 파일을 Git 저장소에 배포하는 플러그인입니다.</p><p><code>&lt;folder&gt;/_config.yml</code>에서 <code>deploy</code> 부분을 수정합니다.</p><figure class="codeblock codeblock--tabbed"><figcaption><span>_config.yml</span><ul class="tabs"><li class="tab active"></li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>deploy:  type: git  repo: https://github.com/&lt;username&gt;/&lt;project&gt;.git # GitHub Pages 저장소 주소 끝에 .git을 붙입니다.  branch: master # 다른 브랜치를 사용하려면 값을 수정해야 합니다.</code></pre></div></figure><p>저장하고 <code>hexo deploy</code><sup id="hexo_02"><a href="#footnote2">[2]</a></sup> 명령어를 실행하면 GitHub 저장소에 Push되고, 배포가 자동으로 진행됩니다. GitHub Pages 저장소에서 진행과정을 볼 수 있습니다.</p><div class="alert info"><p>GitHub에 Push했는데도 GitHub Pages에 배포가 진행되지 않으면 포스트나 첨부 파일 등 뭐라도 좋으니 약간 수정해서 다시 Push를 진행해 보세요. 저장소가 비어있을 때 뭔가 업로드가 되어야 GitHub Pages를 생성할 준비가 되는 것 같습니다.</p></div><p>배포가 완료되면 GitHub Pages에 접속해서 결과를 확인합니다.</p><p><br></br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_009_done.png" alt=""></div></p><p>이제 취향대로 수정하면서 자신만의 블로그를 만들어나가면 되겠습니다.</p><hr/><blockquote><p><b id="footnote1">[1]</b> <code>--save</code>는 패키지를 설치할 때 <code>package.json</code> 파일의 <code>dependencies</code>  항목에 같이 저장하라는 의미입니다. npm 5.0.0부터는 이 과정이 기본 설정에 포함되면서 <code>--save</code>를 빼고 명령을 실행해도 <code>--save</code>를 붙인 것과 같은 결과가 나옵니다. 이 포스트는 공식 문서를 따라서 설치중이므로 <code>--save</code>를 그대로 사용했습니다. <a href="#hexo_01">↩</a><br><b id="footnote2">[2]</b> 커밋 메시지를 Hexo에서 자동으로 생성하는 내용 대신 원하는 내용으로 적고 싶다면 <code>-m</code> 옵션을 추가해서, <code>hexo deploy -m &quot;commit message&quot;</code> 를 실행하면 됩니다. -m은 Message를 의미하고, 원래 Git의 커밋 메시지를 지정할 때 사용되는 옵션이므로 Hexo에서 커밋할때도 같은 방식으로 메시지를 지정할 수 있습니다.<a href="#hexo_02">↩</a></p></blockquote><p><br></br></p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>고생하셨습니다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/">Information_Technology</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/">Web</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/">GitHub_Pages</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/Hexo/">Hexo</category>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Hexo/">Hexo</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Tranquilpeak/">Tranquilpeak</category>
+      
+      
+      <comments>https://h473r560nn4h473.github.io/2024/12/14/github-pages-hexo-with-tranquilpeak-theme-deploy/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>GitHub Pages: Hexo with Tranquilpeak theme - Contents</title>
+      <link>https://h473r560nn4h473.github.io/2024/12/13/github-pages-hexo-with-tranquilpeak-theme-contents/</link>
+      <guid>https://h473r560nn4h473.github.io/2024/12/13/github-pages-hexo-with-tranquilpeak-theme-contents/</guid>
+      <pubDate>Fri, 13 Dec 2024 04:50:48 GMT</pubDate>
+      
+      <description>&lt;p&gt;블로그를 만듭니다.&lt;br&gt;게시물입니다.&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<!-- excerpt --><h3 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h3><ol><li><a href="#Introduction">Introduction</a></li><li><a href="#Config">Config</a></li><li><a href="#Scaffolds">Scaffolds</a></li><li><a href="#Front-matter">Front-matter</a></li><li><a href="#Draft">Draft</a></li><li><a href="#Post">Post</a></li><li><a href="#Page">Page</a></li><li><a href="#Writing">Writing</a></li><li><a href="#Conclusion">Conclusion</a><br><br></br></li></ol><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Hexo에 Tranquilpeak 테마를 설치하고 Utterances까지 추가해서 기반을 완성했습니다.<br>이제 내용을 채워넣을 차례입니다.</p><a href="https://hexo.io/ko/docs/writing" title="" target="_blank">Hexo 공식 문서</a>, <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/main/DOCUMENTATION.md#writing-posts" title="" target="_blank">Tranquilpeak 테마 공식 문서</a>를 참고했습니다.<p><br></br></p><h3 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h3><p><code>&lt;folder&gt;/_config.yml</code>에서 <code>post_asset_folder</code>값을 <code>true</code>로 설정합니다.<br><code>hexo-cli</code>로 게시물을 생성하면 자동으로 게시물의 파일 이름과 같은 이름을 가진 폴더를 생성합니다. 그 폴더에 해당 포스트에서 사용할 첨부 파일을 전부 넣어두면 됩니다.<br><br></br></p><h3 id="Scaffolds"><a href="#Scaffolds" class="headerlink" title="Scaffolds"></a>Scaffolds</h3><p><code>&lt;folder&gt;/scaffolds</code> 폴더를 열면 <code>draft.md</code>, <code>page.md</code>, <code>post.md</code> 파일이 보입니다.<br>이 파일들에 내용을 작성해두면 <code>hexo-cli</code>로 게시물을 생성할 때 작성해둔 내용을 불러오므로 매번 형식을 바꾸는게 아니라면 좀 더 편하게 게시물을 작성할 수 있습니다.<br>아직 익숙해지지 않은 Markdown 예시를 적어둬서 사용법을 매번 검색하는 번거로움을 줄일 수도 있겠습니다.<br><br></br></p><h3 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h3><p>scaffolds 폴더의 파일을 하나 열어보면, <code>---</code>이 두 줄 있고 그 사이에 내용이 몇 줄 적혀있습니다. 이것을 <a href="https://hexo.io/ko/docs/front-matter" title="" target="_blank">Front-matter</a>이라 합니다.<br><code>Front-matter</code>은 게시물의 설정을 담당하는 부분으로, 카테고리, 태그 등의 옵션들이 들어갑니다.</p><figure class="codeblock codeblock--tabbed"><figcaption><span>Front-matter of this post</span><ul class="tabs"><li class="tab active"></li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>---title: "GitHub Pages: Hexo with Tranquilpeak theme - Contents"categories:  - Information_Technology  - Web  - GitHub_Pages  - Hexotags:  - Hexo  - TranquilpeakthumbnailImage: hexo-logo-avatar.pngcomment: trueabbrlink: 57643date: 2024-12-13 13:50:48---</code></pre></div></figure><p>저는 많이 사용하진 않았지만, 공식 문서를 읽어보면 지원하는 기능이 많습니다.</p><a href="https://hexo.io/docs/front-matter" title="" target="_blank">Hexo 공식 문서</a>와 <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/main/DOCUMENTATION.md#front-matter-settings" title="" target="_blank">Tranquilpeak 공식 문서</a>를 보면서 원하는 기능을 추가해나가는데, 공식 문서 간에 내용이 충돌하면 둘 다 사용해보고 작동하는 쪽을 찾아서 써야 합니다.<div class="alert info"><p>새 게시물에 thumbnail을 추가했을 때 로컬에서 보이지 않는데, 정상입니다.<br>GitHub Pages에 배포가 되어야 제대로 출력됩니다.<br>thumbnail의 경우 절대 경로를 사용하기 때문이라고 합니다.</p></div><p><br></br></p><h3 id="Draft"><a href="#Draft" class="headerlink" title="Draft"></a>Draft</h3><p>Draft는 초안을 의미합니다. 기본적으로는 내용이나 길이에 상관없이 배포되지 않으므로<sup id="hexo_01"><a href="#footnote1">[1]</a></sup> 완성이 덜 됐거나, 발행 예정일이 아직 멀었다거나 같은 이유 등으로 공개할 준비가 되지 않은 포스트를 작성할 때 유용합니다.<br><code>hexo new draft &quot;draft_filename&quot;</code>으로 Draft 파일을 생성하는데, 이 때 <code>scaffolds/draft.md</code>에 작성했던 내용이 자동으로 추가됩니다.<br><code>hexo publish &lt;draft_filename&gt;</code> 명령어로 Draft를 Post로 발행할 수 있습니다. 명령을 실행하면 <code>scaffolds/post.md</code>의 내용을 읽어서 Front-matter의 내용을 Draft 파일에 반영합니다. 이 때 충돌하는 설정이 있을 경우 Draft 파일의 내용을 우선하고, Draft 파일에 없는 설정이 <code>scaffolds/post.md</code>에 있다면 그 설정을 추가한 뒤 <code>_posts</code> 폴더로 파일을 옮겨서 발행을 마무리합니다. 파일 생성 시간 대신 발행 시간을 기록하고 싶다면 <code>date</code> 설정을 <code>post.md</code> 파일에만 남겨놓으면 되겠습니다.</p><hr/><blockquote><p><b id="footnote1">[1]</b> Hexo 서버를 실행할 때 <code>--draft</code>옵션을 사용하면 로컬에서 Draft를 볼 수 있고, <code>&lt;folder&gt;/_config.yml</code>파일에서 <code>render_drafts</code>의 값을 <code>true</code>로 설정하고 배포하면 GitHub Pages에서도 보입니다. <a href="#hexo_01">↩</a></p></blockquote><p><br></br></p><h3 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h3><p>Post는 공개할 준비가 된 게시물입니다.<br><code>hexo new post &quot;post_filename&quot;</code>으로 Post 파일을 생성하는데, 이 때 <code>scaffolds/post.md</code>에 작성했던 내용이 자동으로 추가됩니다. 기본 설정<sup id="hexo_02"><a href="#footnote2">[2]</a></sup>을 바꾸지 않았다면 <code>hexo new &quot;post_filename&quot;</code>만으로도 Post 파일이 생성됩니다.</p><hr/><blockquote><p><b id="footnote2">[2]</b> <code>&lt;folder&gt;/_config.yml</code>의 <code>default_layout</code>이고, 기본값은 post입니다. <code>default_layout</code>의 값을 draft나 page로 바꾸고 <code>hexo new &quot;filename&quot;</code>을 실행하면 설정한 레이아웃이 생성됩니다. <a href="#hexo_02">↩</a></p></blockquote><p><br></br></p><h3 id="Page"><a href="#Page" class="headerlink" title="Page"></a>Page</h3><p>Page는 독립적이고 거의 변경되지 않는 내용을 작성할 때 사용됩니다. 주로 약력이나 연락처와 같이 자주 변경되지 않는 정적인 정보를 담습니다. <code>&lt;folder&gt;/themes/tranquilpeak/_config.yml</code>이나 레이아웃 등을 수정해서 표시하려는 위치에 작성한 Page를 추가해주지 않으면 블로그에 표시되지 않습니다.<br><br></br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_007_page_sidebar.png" alt=""></div></p><p>사이드바의 내용이 이 GitHub Pages에서 쉽게 찾을 수 있는 페이지들입니다.<br><br></br></p><h3 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h3><p>Markdown 문법을 사용해서 작성하면 되는데, Hexo와 Tranquilpeak 테마에서 추가적으로 지원하는 기능도 있습니다.</p><p>제가 일단 쓰고 시작하는 것으로 <code>&lt;!-- excerpt --&gt;</code> 가 있습니다. <code>&lt;!-- excerpt --&gt;</code> 의 위쪽에 작성한 내용은 글 목록에만 표시되고, 본문에는 표시되지 않습니다. 저는 내용을 간략하게 알리기 위해 <code>&lt;!-- excerpt --&gt;</code>를 사용합니다.<br><br></br><div class="figure " style="width:;"><img class="fig-img" src="hexo_008_excerpt.png" alt=""></div></p><p>글 목록만을 위한 내용을 작성하기 싫은데 글 목록에서 글 내용 전부를 보여주고 싶진 않다면<br><code>&lt;!-- more --&gt;</code>을 사용할 수 있습니다.<br>글 목록에서 보여주고 싶은 내용을 작성하고 아래에 <code>&lt;!-- more --&gt;</code>을 붙인후 계속 작성하면, <code>&lt;!-- more --&gt;</code> 이후에 작성한 내용은 글 목록에서 보이지 않습니다. 본문에 접속해야 나머지를 읽을 수 있습니다.</p><p>블로그를 그만둘때까지 이미지를 포함한 포스트를 단 한번도 작성하지 않을 수 있을까요?<br>이미지를 첨부할 때 다양한 설정을 추가해서 올릴 수 있습니다.<br><code>&#123;% image [classes] group:group-name /path/to/image [/path/to/thumbnail] [width of thumbnail] [height of thumbnail] [title text] %&#125;</code><br>반드시 포함해야 하는 부분은 <code>&#123;% image "/path/to/image" %&#125;</code> 뿐이고, 나머지는 전부 옵션입니다. </p><p>동영상도 첨부할 수 있습니다.<br><code>&#123;% video [classes] videoURL [Optional Poster (Thumbnail) URL] [Width] [Caption] %&#125;</code><br>반드시 포함해야 하는 부분은 <code>&#123;% video "videoURL" %&#125;</code> 뿐이고, 나머지는 전부 옵션입니다.</p><p>Markdown이나 Hexo 공식 문서, Tranquilpeak 테마 공식 문서를 전부 붙여넣을 수는 없으니 원하는 기능이 있다면 찾아보면서 작성하시면 되겠습니다.<br>꾸준하게 쓰다 보면 언젠가는 익숙해지겠죠.<br><br></br></p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>게시물을 주제로 한 게시물을 작성했습니다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/">Information_Technology</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/">Web</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/">GitHub_Pages</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/Hexo/">Hexo</category>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Hexo/">Hexo</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Tranquilpeak/">Tranquilpeak</category>
+      
+      
+      <comments>https://h473r560nn4h473.github.io/2024/12/13/github-pages-hexo-with-tranquilpeak-theme-contents/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>GitHub Pages: Hexo with Tranquilpeak theme - giscus</title>
+      <link>https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/</link>
+      <guid>https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/</guid>
+      <pubDate>Thu, 12 Dec 2024 04:05:44 GMT</pubDate>
+      
+      <description>&lt;p&gt;블로그를 만듭니다.&lt;br&gt;giscus로 댓글 입력란을 추가합니다.&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<!-- excerpt --><h3 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h3><ol><li><a href="#Introduction">Introduction</a></li><li><a href="#Install-giscus">Install: giscus</a></li><li><a href="#Install-Grunt">Install: Grunt</a></li><li><a href="#Check-Results">Check Results</a></li><li><a href="#Conclusion">Conclusion</a><br><br></br></li></ol><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>소통할 창구가 없으면 스스로 알아차리기 전에는 문제가 있는지 모릅니다.<br>그래서 댓글 기능을 반드시 추가해야 했습니다.<br>처음 찾은 것은 Disqus입니다. 회원가입을 요구해서 포기했습니다.<br>다음으로 찾은 것은 Utterances입니다. 처음에는 잘 작동했었는데 나중에 다시 확인하니 댓글을 등록하려고 하면 404 에러를 띄워서 포기했습니다. <a href="https://github.com/utterance/utterances/issues/443" title="" target="_blank">이런 이슈</a>가 있는걸 보면 canonical을 추가하면서 고장 난 거 같습니다.<br>마지막으로 찾은 것이 giscus입니다. GitHub 계정만 있으면 됩니다.<br><br></br></p><h3 id="Install-giscus"><a href="#Install-giscus" class="headerlink" title="Install: giscus"></a>Install: giscus</h3><p>이하 과정 중 막히는 부분이 있다면 <a href="https://giscus.app/ko" title="" target="_blank">giscus 공식 문서</a>를 따라서 진행하시면 됩니다.</p><p>giscus는 GitHub Discussions를 이용해 댓글을 구현합니다. 그래서 giscus가 사용할 저장소를 하나 만들어줘야 합니다.<br>원하는 이름으로 공개 저장소를 하나 만듭니다. 비공개 저장소로 만들면 다른 접속자가 댓글을 볼 수 없습니다.</p><p>만든 저장소의 Settings에서 Features을 찾아서 Discussions 기능을 활성화시킵니다.<br><br></br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_004_repo_config.png" alt=""></div></p><p>저는 다른 기능은 비활성화시켰습니다. 지금은 필요없고, 나중에 필요해지면 활성화시키면 됩니다.</p><a href="https://giscus.app/ko" title="" target="_blank">giscus</a>에 접속해서 저장소에 <a href="https://github.com/apps/giscus" title="" target="_blank">giscus app</a>을 설치합니다. 저장소를 선택할 때 `Only select repositories`에서 giscus 전용 저장소를 고릅니다.<p><br></br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_005_giscus_repo.png" alt=""></div></p><p>giscus로 돌아가서 설정을 진행합니다.<br>테마를 고르면 그 테마의 색으로 설정 페이지가 바로 바뀌므로, 원하는 색을 고르기가 편합니다.</p><p>설정이 끝나면 <code>giscus 사용</code>에 설정한 내용이 반영되어 있습니다. <code>&lt;script&gt;</code> 블록에 마우스 커서가 올라가면 우측 상단에 복사 버튼이 표시되니 눌러서 설정을 복사해주세요.</p><p>이제 파일들을 만들고 수정해야 합니다. <code>&lt;folder&gt;/themes/tranquilpeak/layout/_partial</code>으로 이동해서 <code>comment.ejs</code> 파일을 만들고 편집기로 열어줍니다.<br>모든 포스트에 댓글 입력란을 표시하려면 복사한 설정을 붙여넣고 저장하면 되고, 포스트마다 댓글 입력란 표시 여부를 정하고 싶다면 코드를 약간 추가하면 됩니다.</p><figure class="codeblock codeblock--tabbed"><figcaption><span>comment.ejs</span><ul class="tabs"><li class="tab active">EJS</li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>&lt;% if (page.comment !== false) { %&gt;# 댓글 입력란 표시여부 설정 기능 추가# 여기에 복사한 설정을 붙여넣습니다.&lt;% } %&gt;</code></pre></div></figure><p>저장하고 댓글 입력란을 표시하기 위해 같은 경로에 있는 <code>post.ejs</code> 파일을 편집기로 엽니다.<br>스크롤을 맨 밑으로 내리면 <code>&lt;/article&gt;</code> 위에 <code>&lt;/div&gt;</code>가 있습니다. 그 위에 <code>&lt;%- partial(&#39;comment&#39;) %&gt;</code>를 작성해 주세요.</p><figure class="codeblock codeblock--tabbed"><figcaption><span>post.ejs</span><ul class="tabs"><li class="tab active">EJS</li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>&lt;%- partial('comment') %&gt;    &lt;/div&gt;&lt;/article&gt;</code></pre></div></figure><p>파일 생성 및 수정은 이것으로 끝이지만, 수정 내용이 바로 적용되진 않습니다.<br><code>Grunt</code>를 사용해서 수정 내역을 반영해줘야 합니다.<br><br></br></p><h3 id="Install-Grunt"><a href="#Install-Grunt" class="headerlink" title="Install: Grunt"></a>Install: Grunt</h3><p>Grunt는 자바스크립트 작업 자동화 도구입니다.<br>블로그 작업 중에 Grunt를 자주 사용하게 될 텐데, 그렇다고 여러가지를 익혀야 하는 것은 아닙니다.<br>아마 <code>grunt build</code> 명령 하나만을 쓰게 될 것입니다.<br>layout이나 css등을 수정했다면 저장하고 <code>grunt build</code> 까지 해줘야 변경된 내용이 적용됩니다.</p><p>명령 프롬프트를 열어서 <code>npm install -g grunt-cli</code> 명령으로 grunt를 설치하고, <code>cd &lt;folder&gt;/themes/tranquilpeak</code>으로 테마 폴더로 이동한 후 <code>npm install grunt --save-dev</code><sup id="hexo_01"><a href="#footnote1">[1]</a></sup> 명령어를 입력해서 Grunt를 설치합니다.</p><p>명령 프롬프트에 <code>grunt build</code>를 입력하고 Done.이 출력되면 Grunt로 해야 하는 작업은 끝입니다.</p><hr/><blockquote><p><b id="footnote1">[1]</b> –save-dev는 패키지를 개발 의존성으로 설치하라는 의미입니다. 애플리케이션의 실제 실행에는 필요하지 않은 패키지를 설치할 떄 사용합니다. 이 명령으로 설치된 패키지는 <code>package.json</code>의 <code>devDependencies</code>에 저장됩니다. <a href="#hexo_01">↩</a> </p></blockquote><p><br></br></p><h3 id="Check-Results"><a href="#Check-Results" class="headerlink" title="Check Results"></a>Check Results</h3><p>댓글 입력란은 포스트의 맨 아래쪽에 출력되기 때문에 제대로 적용되었는지 확인하려면 포스트가 하나 있어야 합니다. Hexo에 기본으로 들어있는 Hello World 포스트가 있으니 이것으로 확인하겠습니다.</p><p>포스트에 댓글 입력란 표시여부 기능을 추가하지 않았다면 <code>cd &lt;folder&gt;</code>으로 Hexo 폴더로 이동한 후 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s -o</code> 명령으로 Hexo 서버를 실행하고 바로 보이는 Hello World 포스트에 접속해서 스크롤을 맨 밑으로 내리면 댓글 입력란이 표시되어 있습니다.</p><p>포스트에 댓글 입력란 표시여부 기능을 추가했다면 <code>&lt;folder&gt;/source/_posts</code> 경로에 들어가보면 <code>hello-world.md</code> 파일이 있습니다. 편집기로 열면 위쪽에 <code>title: Hello World</code>이 있을 텐데, 그 아래에 <code>comment: true</code>를 추가해 줍니다.</p><figure class="codeblock codeblock--tabbed"><figcaption><span>hello-world.md</span><ul class="tabs"><li class="tab active"></li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>---title: Hello Worldcomment: true---</code></pre></div></figure><p>저장한 뒤, <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s -o</code> 명령으로 Hexo 서버를 실행하고 바로 보이는 Hello World 포스트에 접속해서 스크롤을 맨 밑으로 내리면 댓글 입력란이 표시되어 있습니다.<br><br></br></p><div class="figure " style="width:;"><img class="fig-img" src="hexo_006_giscus_done.png" alt=""></div><p>잘 적용되었습니다.<br><br></br></p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>저는 Utterances를 설치해뒀다가 고장나서 giscus로 바꾼건데 comment.ejs 파일 내용만 갈아치우면 끝이라 어렵지 않았습니다.<br>giscus는 문제 없이 유지되었으면 좋겠네요.</p>]]></content:encoded>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/">Information_Technology</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/">Web</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/">GitHub_Pages</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/Hexo/">Hexo</category>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Hexo/">Hexo</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Tranquilpeak/">Tranquilpeak</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/giscus/">giscus</category>
+      
+      
+      <comments>https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>GitHub Pages: Hexo with Tranquilpeak theme - Introduction</title>
+      <link>https://h473r560nn4h473.github.io/2024/12/11/github-pages-hexo-with-tranquilpeak-theme-introduction/</link>
+      <guid>https://h473r560nn4h473.github.io/2024/12/11/github-pages-hexo-with-tranquilpeak-theme-introduction/</guid>
+      <pubDate>Wed, 11 Dec 2024 10:30:00 GMT</pubDate>
+      
+      <description>&lt;p&gt;블로그를 만듭니다.&lt;br&gt;Hexo와 Tranquilpeak 테마를 설치합니다.&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<!-- excerpt --><h3 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h3><ol><li><a href="#Introduction">Introduction</a></li><li><a href="#Install-Hexo">Install: Hexo</a></li><li><a href="#Install-Tranquilpeak">Install: Tranquilpeak</a></li><li><a href="#Conclusion">Conclusion</a><br><br></br></li></ol><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>여러 가지 이유로 블로그가 필요했습니다.<br>다른 잡다한 것을 신경 쓰지 않고 글만 쓸 수 있게 만들어진 플랫폼이 이미 많이 있지만, Git과 GitHub에 더 익숙해지기 위해 GitHub Pages를 선택했습니다.<br>처음 선택했던 것은 GitHub Pages를 검색하니 바로 나왔던 Jekyll과 Chirpy 테마였는데, 작업하는 동안 계속 오류가 발생했었습니다. 하나씩 해결하다 보니 GitHub Pages에 제대로 표시되긴 했는데, 뭔가 새로 하려고 하면 또 오류가 보일 것 같아 다른 방법을 찾아봤습니다.<br>Jekyll 외에 Hexo, Hugo, Gatsby, Pelican 등이 있었는데, 팀 프로젝트를 진행할 때 Node.js를 사용했었으므로 구조가 조금이라도 보이는 Node.js 기반으로 작동하는 Hexo를 선택했습니다.<br>테마는 Tranquilpeak을 선택했습니다. 선택지가 많은데 많지 않았습니다.<br><br></br></p><h3 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install: Hexo"></a>Install: Hexo</h3><p>이하 과정 중 막히는 부분이 있다면 <a href="https://hexo.io/ko/docs/" title="" target="_blank">Hexo 공식 문서</a>를 따라서 진행하시면 됩니다.</p><p>Git과 Node.js를 설치해야 합니다.<br>설치할 당시 작업환경은 Windows 11, Node.js v18.20.4 입니다.</p><p>GitHub에 저장소를 만들어야 합니다.</p><ul><li>GitHub Pages 배포만 하려면 저장소 한 개 만들기</li><li>GitHub Pages 소스도 저장하려면 저장소 두 개 만들기</li></ul><p>GitHub Pages 배포를 위한 저장소를 만들 때 이름을 (username).github.io 으로 만들어야 합니다.<br>GitHub Pages 배포를 위한 저장소는 공개 저장소로 만들어야 합니다. </p><p>명령 프롬프트를 열어서 <code>npm install hexo-cli -g</code><sup id="hexo_01"><a href="#footnote1">[1]</a></sup> 을 입력해 Hexo를 설치합니다.</p><p>Hexo가 설치됐다면 <code>hexo init &lt;folder&gt;</code> 을 입력해 GitHub Pages 작업용 폴더를 생성합니다.<br><code>&lt;folder&gt;</code>에는 <code>C:/Github_Pages</code>처럼 경로 전체를 입력하시면 됩니다.</p><div class="alert info"><p>이후 Hexo 관련 포스트에서 <code>Hexo 폴더</code>나 <code>&lt;folder&gt;</code>가 언급될 경우, 이를 GitHub Pages 작업용 폴더로 치환해서 읽어주세요.</p></div><p>폴더가 생성됐으면 <code>cd &lt;folder&gt;</code>을 입력해 생성한 폴더로 이동한 뒤 <code>npm install</code> 명령으로 의존성 패키지들을 설치합니다.</p><p><code>hexo server -o</code>이나 <code>hexo s -o</code><sup id="hexo_02"><a href="#footnote2">[2]</a></sup>를 입력하면 Hexo 서버가 시작되고 브라우저가 열려서 설치한 Hexo 페이지를 표시합니다. 아직 테마를 설치하지 않았으므로 기본 테마인 Landscape가 적용된 화면이 보입니다.<br><br></br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_001_landscape.png" alt=""></div></p><p>이것으로 Hexo 설치가 끝났습니다.</p><hr/><blockquote><p><b id="footnote1">[1]</b> -g 옵션은 Global을 의미하고, Hexo를 시스템 전체에서 사용할 수 있도록 설치합니다. <a href="#hexo_01">↩</a><br><b id="footnote2">[2]</b> -o 옵션은 Open을 의미하고, Hexo 서버가 시작되면 자동으로 브라우저를 열어서 로컬 서버에서 실행 중인 블로그 페이지를 표시합니다. <a href="#hexo_02">↩</a></p></blockquote><p><br></br></p><h3 id="Install-Tranquilpeak"><a href="#Install-Tranquilpeak" class="headerlink" title="Install: Tranquilpeak"></a>Install: Tranquilpeak</h3><p>이하 과정 중 막히는 부분이 있다면 <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/main/DOCUMENTATION.md" title="" target="_blank">Tranquilpeak 공식 문서</a>를 따라서 진행하시면 됩니다.</p><p>다른 Hexo 테마는 <code>git clone</code>으로 받지만, Tranquilpeak 테마는 <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" title="" target="_blank">Tranquilpeak GitHub</a>에서 직접 받아야 합니다.<br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases">Releases</a>로 접속해서 최신 버전을 받습니다. 2024년 12월 11일 기준 최신 버전은 <code>4.2.0</code>입니다.<br><br></br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_002_tranquilpeak_zip.png" alt=""></div></p><p>압축을 풀어서 나온 폴더 이름을 tranquilpeak으로 변경하고, Hexo 폴더로 돌아가서 tranquilpeak 폴더를 themes 폴더 안으로 옮깁니다. 경로가 <code>&lt;folder&gt;/themes/tranquilpeak</code>가 될 것입니다.</p><p>Hexo 폴더로 돌아가서, 편집기를 열어서 _config.yml 파일을 불러옵니다.<br><code>theme</code>을 찾아서 값을 수정합니다. 기본 테마인 landscape로 설정되어 있을 텐데, tranquilpeak으로 바꾸고 저장하시면 됩니다.</p><p>명령 프롬프트에서 tranquilpeak 폴더로 이동하고, <code>npm install &amp;&amp; npm run prod</code><sup id="hexo_03"><a href="#footnote3">[3]</a></sup> 명령을 실행합니다.<br>끝났으면 명령 프롬프트에서 <code>cd ../..</code> 명령을 실행해 Hexo 폴더로 돌아갑니다.<br>Hexo 폴더에서 <code>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo server -o</code> 명령으로 Hexo 서버를 실행합니다.<br><code>hexo clean</code> 명령어는 Hexo에서 생성한 캐시 파일과 배포용 파일들을 삭제하는 기능을 합니다. <code>hexo c</code>는 사용할 수 없는데, 명령어 목록을 보면 <code>clean</code>과 <code>config</code>이 있어서 <code>c</code>로 시작하는 명령어가 두 개 존재하므로 <code>c</code> 하나만으로는 무엇을 명령하는지 알 수 없기 때문인 것 같습니다.<br><code>hexo generate</code> 명령어는 작업한 소스를 기반으로 정적 파일들을 생성합니다. <code>hexo g</code>로 줄여도 같은 결과를 볼 수 있습니다. 실행하면 public 폴더를 생성하는데, 이 폴더의 내용물을 GitHub Pages 배포용 저장소에 올릴 것입니다.</p><p>문제 없이 진행되었다면 Tranquilpeak 테마가 적용된 화면을 볼 수 있습니다.<br><br></br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_003_tranquilpeak.png" alt=""></div></p><p>이것으로 Tranquilpeak 테마 설치가 끝났습니다.</p><hr/><blockquote><p><b id="footnote3">[3]</b> npm run prod는 package.json 파일에 정의된 사용자 스크립트를 실행하는 명령입니다. prod는 production의 약어입니다. <a href="#hexo_03">↩</a></p></blockquote><p><br></br></p><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Hexo와 Tranquilpeak 테마는 Jekyll과 Chirpy 테마를 설치할 때와 다르게 설치과정에서는 문제가 없어서 편했습니다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/">Information_Technology</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/">Web</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/">GitHub_Pages</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/categories/Information-Technology/Web/GitHub-Pages/Hexo/">Hexo</category>
+      
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Hexo/">Hexo</category>
+      
+      <category domain="https://h473r560nn4h473.github.io/tags/Tranquilpeak/">Tranquilpeak</category>
+      
+      
+      <comments>https://h473r560nn4h473.github.io/2024/12/11/github-pages-hexo-with-tranquilpeak-theme-introduction/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>

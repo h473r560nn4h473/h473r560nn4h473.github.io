@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+	<link rel="canonical" href="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="7R14L 4nD 3rR0r">
+    <title>GitHub Pages: Hexo with Tranquilpeak theme - giscus - 7R14L 4nD 3rR0r</title>
+    <meta name="author" content="h473r560nn4h473">
+    
+        <meta name="keywords" content="programming,">
+    
+    
+        <link rel="icon" href="https://h473r560nn4h473.github.io/assets/images/favicon.ico">
+    
+    
+        
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss2.xml">
+        
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"h473r560nn4h473","sameAs":["/profile","https://github.com/h473r560nn4h473","mailto:hatersgonnahate616@gmail.com"],"image":"profile.jpg"},"articleBody":"\nContents\nIntroduction\nInstall: giscus\nInstall: Grunt\nCheck Results\nConclusion\n\nIntroduction소통할 창구가 없으면 스스로 알아차리기 전에는 문제가 있는지 모릅니다.그래서 댓글 기능을 반드시 추가해야 했습니다.처음 찾은 것은 Disqus입니다. 회원가입을 요구해서 포기했습니다.다음으로 찾은 것은 Utterances입니다. 처음에는 잘 작동했었는데 나중에 다시 확인하니 댓글을 등록하려고 하면 404 에러를 띄워서 포기했습니다. 이런 이슈가 있는걸 보면 canonical을 추가하면서 고장 난 거 같습니다.마지막으로 찾은 것이 giscus입니다. GitHub 계정만 있으면 됩니다.\nInstall: giscus이하 과정 중 막히는 부분이 있다면 giscus 공식 문서를 따라서 진행하시면 됩니다.\ngiscus는 GitHub Discussions를 이용해 댓글을 구현합니다. 그래서 giscus가 사용할 저장소를 하나 만들어줘야 합니다.원하는 이름으로 공개 저장소를 하나 만듭니다. 비공개 저장소로 만들면 다른 접속자가 댓글을 볼 수 없습니다.\n만든 저장소의 Settings에서 Features을 찾아서 Discussions 기능을 활성화시킵니다. \n저는 다른 기능은 비활성화시켰습니다. 지금은 필요없고, 나중에 필요해지면 활성화시키면 됩니다.\ngiscus에 접속해서 저장소에 giscus app을 설치합니다. 저장소를 선택할 때 `Only select repositories`에서 giscus 전용 저장소를 고릅니다.\n \ngiscus로 돌아가서 설정을 진행합니다.테마를 고르면 그 테마의 색으로 설정 페이지가 바로 바뀌므로, 원하는 색을 고르기가 편합니다.\n설정이 끝나면 giscus 사용에 설정한 내용이 반영되어 있습니다. &lt;script&gt; 블록에 마우스 커서가 올라가면 우측 상단에 복사 버튼이 표시되니 눌러서 설정을 복사해주세요.\n이제 파일들을 만들고 수정해야 합니다. &lt;folder&gt;/themes/tranquilpeak/layout/_partial으로 이동해서 comment.ejs 파일을 만들고 편집기로 열어줍니다.모든 포스트에 댓글 입력란을 표시하려면 복사한 설정을 붙여넣고 저장하면 되고, 포스트마다 댓글 입력란 표시 여부를 정하고 싶다면 코드를 약간 추가하면 됩니다.\ncomment.ejsEJS&lt;% if (page.comment !== false) { %&gt;\n# 댓글 입력란 표시여부 설정 기능 추가\n# 여기에 복사한 설정을 붙여넣습니다.\n&lt;% } %&gt;\n\n저장하고 댓글 입력란을 표시하기 위해 같은 경로에 있는 post.ejs 파일을 편집기로 엽니다.스크롤을 맨 밑으로 내리면 &lt;/article&gt; 위에 &lt;/div&gt;가 있습니다. 그 위에 &lt;%- partial(&#39;comment&#39;) %&gt;를 작성해 주세요.\npost.ejsEJS&lt;%- partial('comment') %&gt;\n    &lt;/div&gt;\n&lt;/article&gt;\n\n파일 생성 및 수정은 이것으로 끝이지만, 수정 내용이 바로 적용되진 않습니다.Grunt를 사용해서 수정 내역을 반영해줘야 합니다.\nInstall: GruntGrunt는 자바스크립트 작업 자동화 도구입니다.블로그 작업 중에 Grunt를 자주 사용하게 될 텐데, 그렇다고 여러가지를 익혀야 하는 것은 아닙니다.아마 grunt build 명령 하나만을 쓰게 될 것입니다.layout이나 css등을 수정했다면 저장하고 grunt build 까지 해줘야 변경된 내용이 적용됩니다.\n명령 프롬프트를 열어서 npm install -g grunt-cli 명령으로 grunt를 설치하고, cd &lt;folder&gt;/themes/tranquilpeak으로 테마 폴더로 이동한 후 npm install grunt --save-dev[1] 명령어를 입력해서 Grunt를 설치합니다.\n명령 프롬프트에 grunt build를 입력하고 Done.이 출력되면 Grunt로 해야 하는 작업은 끝입니다.\n\n\n\n[1] –save-dev는 패키지를 개발 의존성으로 설치하라는 의미입니다. 애플리케이션의 실제 실행에는 필요하지 않은 패키지를 설치할 떄 사용합니다. 이 명령으로 설치된 패키지는 package.json의 devDependencies에 저장됩니다. ↩ \n\n\nCheck Results댓글 입력란은 포스트의 맨 아래쪽에 출력되기 때문에 제대로 적용되었는지 확인하려면 포스트가 하나 있어야 합니다. Hexo에 기본으로 들어있는 Hello World 포스트가 있으니 이것으로 확인하겠습니다.\n포스트에 댓글 입력란 표시여부 기능을 추가하지 않았다면 cd &lt;folder&gt;으로 Hexo 폴더로 이동한 후 hexo clean &amp;&amp; hexo g &amp;&amp; hexo s -o 명령으로 Hexo 서버를 실행하고 바로 보이는 Hello World 포스트에 접속해서 스크롤을 맨 밑으로 내리면 댓글 입력란이 표시되어 있습니다.\n포스트에 댓글 입력란 표시여부 기능을 추가했다면 &lt;folder&gt;/source/_posts 경로에 들어가보면 hello-world.md 파일이 있습니다. 편집기로 열면 위쪽에 title: Hello World이 있을 텐데, 그 아래에 comment: true를 추가해 줍니다.\nhello-world.md---\ntitle: Hello World\ncomment: true\n---\n\n저장한 뒤, hexo clean &amp;&amp; hexo g &amp;&amp; hexo s -o 명령으로 Hexo 서버를 실행하고 바로 보이는 Hello World 포스트에 접속해서 스크롤을 맨 밑으로 내리면 댓글 입력란이 표시되어 있습니다.\n\n\n잘 적용되었습니다.\nConclusion저는 Utterances를 설치해뒀다가 고장나서 giscus로 바꾼건데 comment.ejs 파일 내용만 갈아치우면 끝이라 어렵지 않았습니다.giscus는 문제 없이 유지되었으면 좋겠네요.","dateCreated":"2024-12-12T13:05:44+09:00","dateModified":"2024-12-16T11:19:32+09:00","datePublished":"2024-12-12T13:05:44+09:00","description":"블로그를 만듭니다.giscus로 댓글 입력란을 추가합니다.","headline":"GitHub Pages: Hexo with Tranquilpeak theme - giscus","image":["hexo-logo-avatar.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/"},"publisher":{"@type":"Organization","name":"h473r560nn4h473","sameAs":["/profile","https://github.com/h473r560nn4h473","mailto:hatersgonnahate616@gmail.com"],"image":"profile.jpg","logo":{"@type":"ImageObject","url":"profile.jpg"}},"url":"https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/","keywords":"Hexo, Tranquilpeak, giscus","thumbnailUrl":"hexo-logo-avatar.png"}</script>
+    <meta name="description" content="블로그를 만듭니다.giscus로 댓글 입력란을 추가합니다.">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="GitHub Pages: Hexo with Tranquilpeak theme - giscus">
+<meta property="og:url" content="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/index.html">
+<meta property="og:site_name" content="7R14L 4nD 3rR0r">
+<meta property="og:description" content="블로그를 만듭니다.giscus로 댓글 입력란을 추가합니다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/hexo_004_repo_config.png">
+<meta property="og:image" content="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/hexo_005_giscus_repo.png">
+<meta property="og:image" content="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/hexo_006_giscus_done.png">
+<meta property="article:published_time" content="2024-12-12T04:05:44.000Z">
+<meta property="article:modified_time" content="2024-12-16T02:19:32.609Z">
+<meta property="article:author" content="h473r560nn4h473">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Tranquilpeak">
+<meta property="article:tag" content="giscus">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/hexo_004_repo_config.png">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://h473r560nn4h473.github.io/assets/images/profile.jpg">
+    
+    
+        <meta property="og:image" content="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/hexo-logo-avatar.png">
+        <meta class="swiftype" name="image" data-type="enum" content="https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/hexo-logo-avatar.png">
+    
+    
+    
+    <!--STYLES-->
+    
+<link rel="stylesheet" href="/assets/css/all.css">
+
+    
+<link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+
+    
+<link rel="stylesheet" href="/assets/css/thumbs.css">
+
+    
+<link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+
+    <!--STYLES END-->
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHWJ56HYJC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZHWJ56HYJC');
+    </script>
+
+
+    
+
+    
+        
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/" aria-label>
+            7R14L 4nD 3rR0r
+		
+            <p class="header-subtitle">
+                WhY I5n&#39;7 7HI5 W0rKIn&#39;?
+            </p>
+        
+        </a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about" aria-label="링크 열기: /#about">
+        
+        
+            <img class="header-picture" src="/assets/images/profile.jpg" alt="저자 이미지">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about" aria-label="저자에 대해 더 알아보기">
+                    <img class="sidebar-profile-picture" src="/assets/images/profile.jpg" alt="저자 이미지">
+                </a>
+				<h4 class="sidebar-profile-name">h473r560nn4h473</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>Where there’s a will, there’s a way.</p>
+</h5>
+                				
+<!--
+				<div class="sidebar-load-config">
+					<h4 class="sidebar-config-title">7R14L 4nD 3rR0r</h4>
+					
+						<h5 class="sidebar-config-subtitle">WhY I5n&#39;7 7HI5 W0rKIn&#39;?</h5>
+					
+				</div>
+-->
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/" rel="noopener" title="Home">
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" rel="noopener" title="카테고리">
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">카테고리</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" rel="noopener" title="태그">
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">태그</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" rel="noopener" title="아카이브">
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">아카이브</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/profile" rel="noopener" title="약력">
+                        <i class="sidebar-button-icon fa fa-id-card" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">약력</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/h473r560nn4h473" target="_blank" rel="external nofollow noopener noreferrer" title="GitHub">
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="mailto:hatersgonnahate616@gmail.com" target="_blank" rel="external nofollow noopener noreferrer" title="Email">
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Email</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4" class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            GitHub Pages: Hexo with Tranquilpeak theme - giscus
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2024-12-12T13:05:44+09:00">
+	
+		    2024/12/12
+    	
+    </time>
+    
+        <span>카테고리 </span>
+        
+    <a class="category-link" href="/categories/Information-Technology/">Information_Technology</a>, <a class="category-link" href="/categories/Information-Technology/Web/">Web</a>, <a class="category-link" href="/categories/Information-Technology/Web/GitHub-Pages/">GitHub_Pages</a>, <a class="category-link" href="/categories/Information-Technology/Web/GitHub-Pages/Hexo/">Hexo</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt -->
+<h3 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h3><ol>
+<li><a href="#Introduction">Introduction</a></li>
+<li><a href="#Install-giscus">Install: giscus</a></li>
+<li><a href="#Install-Grunt">Install: Grunt</a></li>
+<li><a href="#Check-Results">Check Results</a></li>
+<li><a href="#Conclusion">Conclusion</a><br><br><br></li>
+</ol>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>소통할 창구가 없으면 스스로 알아차리기 전에는 문제가 있는지 모릅니다.<br>그래서 댓글 기능을 반드시 추가해야 했습니다.<br>처음 찾은 것은 Disqus입니다. 회원가입을 요구해서 포기했습니다.<br>다음으로 찾은 것은 Utterances입니다. 처음에는 잘 작동했었는데 나중에 다시 확인하니 댓글을 등록하려고 하면 404 에러를 띄워서 포기했습니다. <a href="https://github.com/utterance/utterances/issues/443" title target="_blank" rel="external nofollow noopener noreferrer">이런 이슈</a>가 있는걸 보면 canonical을 추가하면서 고장 난 거 같습니다.<br>마지막으로 찾은 것이 giscus입니다. GitHub 계정만 있으면 됩니다.<br><br><br></p>
+<h3 id="Install-giscus"><a href="#Install-giscus" class="headerlink" title="Install: giscus"></a>Install: giscus</h3><p>이하 과정 중 막히는 부분이 있다면 <a href="https://giscus.app/ko" title target="_blank" rel="external nofollow noopener noreferrer">giscus 공식 문서</a>를 따라서 진행하시면 됩니다.</p>
+<p>giscus는 GitHub Discussions를 이용해 댓글을 구현합니다. 그래서 giscus가 사용할 저장소를 하나 만들어줘야 합니다.<br>원하는 이름으로 공개 저장소를 하나 만듭니다. 비공개 저장소로 만들면 다른 접속자가 댓글을 볼 수 없습니다.</p>
+<p>만든 저장소의 Settings에서 Features을 찾아서 Discussions 기능을 활성화시킵니다.<br><br><br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_004_repo_config.png" alt></div></p>
+<p>저는 다른 기능은 비활성화시켰습니다. 지금은 필요없고, 나중에 필요해지면 활성화시키면 됩니다.</p>
+<a href="https://giscus.app/ko" title target="_blank" rel="external nofollow noopener noreferrer">giscus</a>에 접속해서 저장소에 <a href="https://github.com/apps/giscus" title target="_blank" rel="external nofollow noopener noreferrer">giscus app</a>을 설치합니다. 저장소를 선택할 때 `Only select repositories`에서 giscus 전용 저장소를 고릅니다.
+<p><br><br> <div class="figure " style="width:;"><img class="fig-img" src="hexo_005_giscus_repo.png" alt></div></p>
+<p>giscus로 돌아가서 설정을 진행합니다.<br>테마를 고르면 그 테마의 색으로 설정 페이지가 바로 바뀌므로, 원하는 색을 고르기가 편합니다.</p>
+<p>설정이 끝나면 <code>giscus 사용</code>에 설정한 내용이 반영되어 있습니다. <code>&lt;script&gt;</code> 블록에 마우스 커서가 올라가면 우측 상단에 복사 버튼이 표시되니 눌러서 설정을 복사해주세요.</p>
+<p>이제 파일들을 만들고 수정해야 합니다. <code>&lt;folder&gt;/themes/tranquilpeak/layout/_partial</code>으로 이동해서 <code>comment.ejs</code> 파일을 만들고 편집기로 열어줍니다.<br>모든 포스트에 댓글 입력란을 표시하려면 복사한 설정을 붙여넣고 저장하면 되고, 포스트마다 댓글 입력란 표시 여부를 정하고 싶다면 코드를 약간 추가하면 됩니다.</p>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>comment.ejs</span><ul class="tabs"><li class="tab active">EJS</li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>&lt;% if (page.comment !== false) { %&gt;
+# 댓글 입력란 표시여부 설정 기능 추가
+# 여기에 복사한 설정을 붙여넣습니다.
+&lt;% } %&gt;</code></pre></div></figure>
+
+<p>저장하고 댓글 입력란을 표시하기 위해 같은 경로에 있는 <code>post.ejs</code> 파일을 편집기로 엽니다.<br>스크롤을 맨 밑으로 내리면 <code>&lt;/article&gt;</code> 위에 <code>&lt;/div&gt;</code>가 있습니다. 그 위에 <code>&lt;%- partial(&#39;comment&#39;) %&gt;</code>를 작성해 주세요.</p>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>post.ejs</span><ul class="tabs"><li class="tab active">EJS</li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>&lt;%- partial('comment') %&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre></div></figure>
+
+<p>파일 생성 및 수정은 이것으로 끝이지만, 수정 내용이 바로 적용되진 않습니다.<br><code>Grunt</code>를 사용해서 수정 내역을 반영해줘야 합니다.<br><br><br></p>
+<h3 id="Install-Grunt"><a href="#Install-Grunt" class="headerlink" title="Install: Grunt"></a>Install: Grunt</h3><p>Grunt는 자바스크립트 작업 자동화 도구입니다.<br>블로그 작업 중에 Grunt를 자주 사용하게 될 텐데, 그렇다고 여러가지를 익혀야 하는 것은 아닙니다.<br>아마 <code>grunt build</code> 명령 하나만을 쓰게 될 것입니다.<br>layout이나 css등을 수정했다면 저장하고 <code>grunt build</code> 까지 해줘야 변경된 내용이 적용됩니다.</p>
+<p>명령 프롬프트를 열어서 <code>npm install -g grunt-cli</code> 명령으로 grunt를 설치하고, <code>cd &lt;folder&gt;/themes/tranquilpeak</code>으로 테마 폴더로 이동한 후 <code>npm install grunt --save-dev</code><sup id="hexo_01"><a href="#footnote1">[1]</a></sup> 명령어를 입력해서 Grunt를 설치합니다.</p>
+<p>명령 프롬프트에 <code>grunt build</code>를 입력하고 Done.이 출력되면 Grunt로 해야 하는 작업은 끝입니다.</p>
+<hr>
+
+<blockquote>
+<p><b id="footnote1">[1]</b> –save-dev는 패키지를 개발 의존성으로 설치하라는 의미입니다. 애플리케이션의 실제 실행에는 필요하지 않은 패키지를 설치할 떄 사용합니다. 이 명령으로 설치된 패키지는 <code>package.json</code>의 <code>devDependencies</code>에 저장됩니다. <a href="#hexo_01">↩</a> </p>
+</blockquote>
+<p><br><br></p>
+<h3 id="Check-Results"><a href="#Check-Results" class="headerlink" title="Check Results"></a>Check Results</h3><p>댓글 입력란은 포스트의 맨 아래쪽에 출력되기 때문에 제대로 적용되었는지 확인하려면 포스트가 하나 있어야 합니다. Hexo에 기본으로 들어있는 Hello World 포스트가 있으니 이것으로 확인하겠습니다.</p>
+<p>포스트에 댓글 입력란 표시여부 기능을 추가하지 않았다면 <code>cd &lt;folder&gt;</code>으로 Hexo 폴더로 이동한 후 <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s -o</code> 명령으로 Hexo 서버를 실행하고 바로 보이는 Hello World 포스트에 접속해서 스크롤을 맨 밑으로 내리면 댓글 입력란이 표시되어 있습니다.</p>
+<p>포스트에 댓글 입력란 표시여부 기능을 추가했다면 <code>&lt;folder&gt;/source/_posts</code> 경로에 들어가보면 <code>hello-world.md</code> 파일이 있습니다. 편집기로 열면 위쪽에 <code>title: Hello World</code>이 있을 텐데, 그 아래에 <code>comment: true</code>를 추가해 줍니다.</p>
+<figure class="codeblock codeblock--tabbed"><figcaption><span>hello-world.md</span><ul class="tabs"><li class="tab active"></li></ul></figcaption><div class="tabs-content"><pre style="display: block;"><code>---
+title: Hello World
+comment: true
+---</code></pre></div></figure>
+
+<p>저장한 뒤, <code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s -o</code> 명령으로 Hexo 서버를 실행하고 바로 보이는 Hello World 포스트에 접속해서 스크롤을 맨 밑으로 내리면 댓글 입력란이 표시되어 있습니다.<br><br><br></p>
+<div class="figure " style="width:;"><img class="fig-img" src="hexo_006_giscus_done.png" alt></div>
+
+<p>잘 적용되었습니다.<br><br><br></p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>저는 Utterances를 설치해뒀다가 고장나서 giscus로 바꾼건데 comment.ejs 파일 내용만 갈아치우면 끝이라 어렵지 않았습니다.<br>giscus는 문제 없이 유지되었으면 좋겠네요.</p>
+            
+
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">태그</span><br>
+                
+    <a class="tag tag--primary tag--small t-none-link" href="/tags/Hexo/" rel="tag">Hexo</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/Tranquilpeak/" rel="tag">Tranquilpeak</a> <a class="tag tag--primary tag--small t-none-link" href="/tags/giscus/" rel="tag">giscus</a>
+
+            </div>
+        
+		
+		<!-- 커스터마이징 해본 관련 글 영역-->
+        
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">관련 포스트</span><br>
+                <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2024\12\13\github-pages-hexo-with-tranquilpeak-theme-contents\" title="GitHub Pages: Hexo with Tranquilpeak theme - Contents" rel="bookmark">GitHub Pages: Hexo with Tranquilpeak theme - Contents</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2024\12\14\github-pages-hexo-with-tranquilpeak-theme-deploy\" title="GitHub Pages: Hexo with Tranquilpeak theme - Deploy" rel="bookmark">GitHub Pages: Hexo with Tranquilpeak theme - Deploy</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2024\12\11\github-pages-hexo-with-tranquilpeak-theme-introduction\" title="GitHub Pages: Hexo with Tranquilpeak theme - Introduction" rel="bookmark">GitHub Pages: Hexo with Tranquilpeak theme - Introduction</a></h3></div></li></ul>
+            </div>
+        
+        <!-- 끝 -->
+
+		
+<script src="https://giscus.app/client.js" data-repo="h473r560nn4h473/github_page_comments" data-repo-id="R_kgDONdejhA" data-category="Comments" data-category-id="DIC_kwDONdejhM4ClOAF" data-mapping="pathname" data-strict="1" data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="ko" data-loading="lazy" crossorigin="anonymous" async>
+</script>
+
+    </div>
+</article>
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2024 h473r560nn4h473. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2024/12/13/github-pages-hexo-with-tranquilpeak-theme-contents/" data-tooltip="GitHub Pages: Hexo with Tranquilpeak theme - Contents" aria-label="이전: GitHub Pages: Hexo with Tranquilpeak theme - Contents">
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">이전</span>
+                    </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2024/12/11/github-pages-hexo-with-tranquilpeak-theme-introduction/" data-tooltip="GitHub Pages: Hexo with Tranquilpeak theme - Introduction" aria-label="다음: GitHub Pages: Hexo with Tranquilpeak theme - Introduction">
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">다음</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="이 포스트 공유하기">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" title="Facebook에 공유하기" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://twitter.com/intent/tweet?text=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" title="Twitter에 공유하기" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://plus.google.com/share?url=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" title="Google+에 공유하기" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" title="global.share_on_linkedin" aria-label="global.share_on_linkedin" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="맨 위로">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" aria-label="Facebook에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>Facebook에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://twitter.com/intent/tweet?text=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" aria-label="Twitter에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>Twitter에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://plus.google.com/share?url=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" aria-label="Google+에 공유하기" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>Google+에 공유하기</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a class="share-option-btn" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://h473r560nn4h473.github.io/2024/12/12/github-pages-hexo-with-tranquilpeak-theme-giscus/" aria-label="global.share_on_linkedin" rel="external nofollow noopener noreferrer">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i><span>global.share_on_linkedin</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/profile.jpg" alt="저자 이미지">
+        
+            <h4 id="about-card-name">h473r560nn4h473</h4>
+        
+            <div id="about-card-bio"><p>Where there’s a will, there’s a way.</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>Programmer</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                Seoul, Republic of Korea
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover_black.jpg');"></div>
+        <!--SCRIPTS-->
+
+<script src="/assets/js/jquery.js"></script>
+
+
+<script src="/assets/js/jquery.fancybox.js"></script>
+
+
+<script src="/assets/js/thumbs.js"></script>
+
+
+<script src="/assets/js/tranquilpeak.js"></script>
+
+<!--SCRIPTS END-->
+
+
+    
+
+
+
+
+    </body>
+</html>
