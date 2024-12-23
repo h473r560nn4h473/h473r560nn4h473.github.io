@@ -11,12 +11,19 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 21 Dec 2024 17:19:59 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Dec 2024 19:20:01 +0900</lastBuildDate>
     <atom:link href="https://h473r560nn4h473.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github Pages: Hugo with PaperMod theme - giscus</title>
+      <link>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-giscus/</link>
+      <pubDate>Mon, 23 Dec 2024 19:20:01 +0900</pubDate>
+      <guid>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-giscus/</guid>
+      <description>Hugo: giscus로 댓글 입력란을 추가합니다.</description>
+    </item>
     <item>
       <title>Github Pages: Hugo with PaperMod theme - Introduction</title>
       <link>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-introduction/</link>
-      <pubDate>Sat, 21 Dec 2024 17:19:59 +0900</pubDate>
+      <pubDate>Sun, 22 Dec 2024 17:19:59 +0900</pubDate>
       <guid>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-introduction/</guid>
       <description>Hugo: Hugo와 PaperMod 테마를 설치합니다.</description>
     </item>
