@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /tags/
+Disallow: /categories/
 Disallow: /page/
 Sitemap: https://h473r560nn4h473.github.io/sitemap.xml

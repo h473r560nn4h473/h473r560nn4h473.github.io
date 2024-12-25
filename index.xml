@@ -69,5 +69,18 @@
       <guid>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hexo/github-pages-hexo-with-tranquilpeak-theme-introduction/</guid>
       <description>Hexo: Hexo와 Tranquilpeak 테마를 설치합니다.</description>
     </item>
+    <item>
+      <title>About</title>
+      <link>https://h473r560nn4h473.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://h473r560nn4h473.github.io/about/</guid>
+      <description>&lt;br&gt;
+&lt;figure class=&#34;align-center &#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;../page/about/about.png#center&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;/br&gt;
+&lt;h2 id=&#34;work-in-progress&#34;&gt;Work in Progress&lt;/h2&gt;</description>
+    </item>
   </channel>
 </rss>
