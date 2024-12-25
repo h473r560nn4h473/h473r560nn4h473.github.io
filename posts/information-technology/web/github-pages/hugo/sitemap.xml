@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-        <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-deploy/</loc>
-          <lastmod>Wed, 25 Dec 2024 18:10 KST</lastmod> </url><url>
-        <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-contents/</loc>
-          <lastmod>Tue, 24 Dec 2024 17:20 KST</lastmod> </url><url>
-        <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-giscus/</loc>
-          <lastmod>Mon, 23 Dec 2024 19:20 KST</lastmod> </url><url>
-        <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-introduction/</loc>
-          <lastmod>Sun, 22 Dec 2024 17:19 KST</lastmod> </url></sitemapindex>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-deploy/</loc>
+      <lastmod>2024-12-25T18:10:26+09:00</lastmod>
+  </url>
+  <url>
+    <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-contents/</loc>
+      <lastmod>2024-12-24T17:20:04+09:00</lastmod>
+  </url>
+  <url>
+    <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-giscus/</loc>
+      <lastmod>2024-12-23T19:20:01+09:00</lastmod>
+  </url>
+  <url>
+    <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/github-pages/hugo/github-pages-hugo-with-papermod-theme-introduction/</loc>
+      <lastmod>2024-12-22T17:19:59+09:00</lastmod>
+  </url>
+</sitemapindex>

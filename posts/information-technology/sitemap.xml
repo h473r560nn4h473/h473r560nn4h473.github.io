@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap>
-        <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/sitemap.xml</loc>
-          <lastmod>Wed, 25 Dec 2024 18:10 KST</lastmod> </sitemap><sitemap>
-        <loc>https://h473r560nn4h473.github.io/posts/information-technology/programming-languages/sitemap.xml</loc></sitemap></sitemapindex>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://h473r560nn4h473.github.io/posts/information-technology/web/sitemap.xml</loc>
+      <lastmod>2024-12-25T18:10:26+09:00</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://h473r560nn4h473.github.io/posts/information-technology/programming-languages/sitemap.xml</loc>
+  </sitemap>
+</sitemapindex>
