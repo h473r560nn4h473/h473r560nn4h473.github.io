@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: /pages/
-Sitemap: http://localhost:1313/sitemap.xml
+Disallow: /tags/
+Disallow: /page/
+Sitemap: https://h473r560nn4h473.github.io/sitemap.xml
